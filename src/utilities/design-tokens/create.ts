@@ -42,7 +42,7 @@ let isThemeListenerInitialized = false;
  * the design token.
  * @returns A FAST CSSDesignToken that emits a CSS custom property.
  */
-export function create<T>(name: string, vscodeThemeVar?: string) {
+export function create<T extends string | number | boolean | BigInteger | null | Array<any> | symbol | {}>(name: string, vscodeThemeVar?: string) {
 	const designToken = DesignToken.create<T>(name);
 
 	if (vscodeThemeVar) {
